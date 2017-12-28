@@ -16,6 +16,13 @@ const (
 )
 
 func main() {
+	fmt.Println(first)
+	fmt.Println(second)
+	fmt.Println(third)
+	fmt.Println(fourth)
+	fmt.Println(fifth)
+	fmt.Println("")
+
 	fmt.Println("Hello " + name)
 
 	myArray := [3]int{} // an array with a fixed size
@@ -42,6 +49,36 @@ func main() {
 	myMap["location"] = "Lagos"
 
 	fmt.Println(myMap)
+
+	// arithmetic operator
+	add := 1 + 2
+	fmt.Println(add)
+
+	// subtraction operator
+	subtract := 10 - 5
+	fmt.Println(subtract)
+
+	// remainder (modulus operator)
+	remainder := 7 % 3
+	fmt.Println(remainder)
+
+	// division operator
+	divide := 10 / 5
+	fmt.Println(divide)
+
+	// multiplication operator
+	multiply := 4 * 5
+	fmt.Println(multiply)
+
+	// incrememnt operator
+	fmt.Println("incrememting stuff!")
+	inc := 1
+	inc++
+	fmt.Println(inc)
+	inc++
+	fmt.Println(inc)
+	inc += 5
+	fmt.Println(inc)
 }
 
 func init() {
