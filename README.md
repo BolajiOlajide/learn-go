@@ -9,6 +9,7 @@ What I learnt in GoLang. Just a mini documentation
 - Loops
 - Functions
 - Anonymous functions
+- Structs
 
 ### LICENSE
 
