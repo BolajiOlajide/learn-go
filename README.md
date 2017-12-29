@@ -7,6 +7,8 @@ What I learnt in GoLang. Just a mini documentation
 - Data Types & Operator
 - Branching
 - Loops
+- Functions
+- Anonymous functions
 
 ### LICENSE
 

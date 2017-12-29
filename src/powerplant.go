@@ -13,9 +13,7 @@ func main() {
 
 	gridLoad := 75.
 
-	fmt.Println("1) Generate Power plant report")
-	fmt.Println("2) Generate Power Grid report")
-	fmt.Println("Please choose an option: ")
+	menu()
 
 	var option string
 
@@ -25,24 +23,36 @@ func main() {
 	// only a copy would be passed and one wouldn't get access to what the
 	// user entered
 
-	println(option, "Your option!")
-
 	switch option {
 	case "1":
-		for idx, cap := range plantCapacities {
-			fmt.Printf("Plant %d capacity: %.0f\n", idx, cap)
-		}
+		generatePlantCapacityReport(plantCapacities...) // variadic functions require you to spread the slice
 	case "2":
-		capacity := 0.
-		for _, plantID := range activePlants {
-			capacity += plantCapacities[plantID]
-		}
-
-		fmt.Printf("%-20s%.0f\n", "Capacity: ", capacity)
-		fmt.Printf("%-20s%.0f\n", "Load: ", gridLoad)
-		fmt.Printf("%-20s%.1f%%\n", "Utilization: ", (gridLoad/capacity)*100)
+		generatePowerGridReport(activePlants, plantCapacities, gridLoad)
 	default:
 		fmt.Println("Invalid value entered!")
 	}
 
+}
+
+func generatePlantCapacityReport(plantCapacities ...float64) {
+	for idx, cap := range plantCapacities {
+		fmt.Printf("Plant %d capacity: %.0f\n", idx, cap)
+	}
+}
+
+func generatePowerGridReport(activePlants []int, plantCapacities []float64, gridLoad float64) {
+	capacity := 0.
+	for _, plantID := range activePlants {
+		capacity += plantCapacities[plantID]
+	}
+
+	fmt.Printf("%-20s%.0f\n", "Capacity: ", capacity)
+	fmt.Printf("%-20s%.0f\n", "Load: ", gridLoad)
+	fmt.Printf("%-20s%.1f%%\n", "Utilization: ", (gridLoad/capacity)*100)
+}
+
+func menu() {
+	fmt.Println("1) Generate Power plant report")
+	fmt.Println("2) Generate Power Grid report")
+	fmt.Println("Please choose an option: ")
 }
