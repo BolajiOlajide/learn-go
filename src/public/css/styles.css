@@ -1,0 +1,51 @@
+body {
+  background: beige;
+}
+
+.row {
+  flex-direction: column;
+}
+
+section {
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+h2 {
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+h3 {
+  margin: 0 0 15px;
+  font-size: 18px;
+}
+
+.box {
+  background: #FFF;
+  margin-bottom: 20px;
+  padding: 20px;
+  min-height: 150px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+/* Link box transition */
+.link a {
+  display: inline-block;
+  padding: 3px 2px;
+  border-radius: 3px;
+  /* transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease; */
+
+  transition: 0.7s ease all;
+}
+
+.link a:hover {
+  background: black;
+  text-decoration: none;
+  padding: 3px 9px;
+  background: #FFDCDC;
+  color: #8a1717;
+}
